@@ -13,14 +13,24 @@ class Personnage
         $this->nom = $nom;
     }
 
-    public function bonus_vie()
+    public function bonus_vie($vie =null)
     {
+        if (is_null($vie)){
 
-        $this->vie = 50;
+            $this->vie = 100;
+        }
+        else{
+        $this->vie += $vie;
+        }
     }
-    public function bonus_armure()
+    public function bonus_armure($armure = null)
     {
+        if (is_null($armure)){
 
-        $this->armure = 20;
+            $this->armure = 0;
+        }
+        else{
+        $this->armure += $armure;
+        }
     }
 }

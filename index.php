@@ -9,8 +9,8 @@ $hero = new personnage("hero");
 $hero->vie = 200;
 $hero->atk = 15;
 $hero->armure=0;
-$hero->bonus_vie();
-$hero->bonus_armure();
+$hero->bonus_vie(50);
+$hero->bonus_armure(20);
 
 $minion = new personnage("minion");
 

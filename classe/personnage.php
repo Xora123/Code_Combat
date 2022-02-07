@@ -8,6 +8,10 @@ class Personnage
     public $atk;
     public $armure;
 
+    public function bobo(){
+        $this->bonus= 50;
+    }
+
     public function __construct($nom)
     {
         $this->nom = $nom;
@@ -17,7 +21,7 @@ class Personnage
     {
         if (is_null($vie)){
 
-            $this->vie = 100;
+            $this->vie = 200;
         }
         else{
         $this->vie += $vie;
@@ -32,5 +36,15 @@ class Personnage
         else{
         $this->armure += $armure;
         }
+    }
+
+    public function mort(){
+        
+        return $this->vie <= 0;
+    }
+
+    public function attaque($cible){
+
+      $cible->vie -= $this->atk;
     }
 }

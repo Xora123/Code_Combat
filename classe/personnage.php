@@ -45,6 +45,6 @@ class Personnage
 
     public function attaque($cible){
 
-      $cible->vie -= $this->atk;
+      $cible->vie -= ($this->atk - $this->armure);
     }
 }

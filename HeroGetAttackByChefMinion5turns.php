@@ -30,14 +30,17 @@ function Combat()
     $chef_minion->atk = 100;
     $chef_minion->armure = 0;
 
-    for ($i = 0; $i <= 4; $i++) {
+    for ($i = 1; $i <= 5; $i++) {
 
-        if($hero->vie <= 0 || $chef_minion->vie <= 0)
-        {
-            if($hero->vie <= 0){
+        echo '<br>';
+        echo "round($i)";
+        echo '<br>';
+
+        if ($hero->vie <= 0 || $chef_minion->vie <= 0) {
+            if ($hero->vie <= 0) {
                 echo 'votre hero est mort :(';
             }
-            if($chef_minion->vie <= 0){
+            if ($chef_minion->vie <= 0) {
                 echo 'Bien jouer le chef Minion est mort';
             }
             break;
@@ -60,16 +63,18 @@ function Combat()
             $hero->bonus_armure(20);
         }
 
-        echo "La vie du héro est de : " .  $hero->vie . " et son armure est de " .$hero->armure ; 
+        echo "La vie du héro est de : " .  $hero->vie . " et son armure est de " . $hero->armure;
         echo '<br>';
         echo  "La vie du chef minion est de :  " . $chef_minion->vie;
         echo '<br>';
-       
 
+        echo '<br>';
+        echo 'Votre héro attaque le chef minion ! ';
         $hero->attaque($chef_minion);
+        echo '<br>';
+        echo 'Le chef minion attaque votre héro!  ';
         $chef_minion->attaque($hero);
-
-     
+        echo '<br>';
     }
 }
 
